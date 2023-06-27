@@ -2,8 +2,24 @@
 
 {% block content %}
 
-  <div style="height: 20rem; background-color: #38df81; border-radius: 1rem; margin: 2rem;">
-    <h1>testing</h1>
+  <div style="border-radius: 1rem; margin: 2rem; text-align:center;">
+    <h1 style="font-family: 'Playfair Display', serif;">Hello World List</h1>
+
+    <form action={% url 'accountapp:hello' %} method="POST">
+      {% csrf_token %}
+      <div>
+        <input type="text" name="hello_input">
+      </div>
+      <div>
+        <input type="submit" class="btn btn-primary" value="POST">
+      </div>
+    </form>
+
+    {% if list %}
+      {% for li in list %}
+        <h4>{{ li.text }}</h4>
+      {% endfor %}
+    {% endif %}
   </div>
 
 {% endblock %}

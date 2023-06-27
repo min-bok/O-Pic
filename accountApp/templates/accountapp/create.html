@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form style="text-align: center" action={% url 'accountapp:create' %} method="Post">
+    {% csrf_token %}
+    {{ form }}
+      <input type="submit" class="btn btn-primary">
+    </form>
+  {% endblock %}
