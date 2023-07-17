@@ -11,15 +11,17 @@ def hello_world(req):
     if req.method == "POST":
         temp = req.POST.get("hello_input")
 
+        # DB에 정보 저장
         new_hello = Hello()
         new_hello.text = temp
         new_hello.save()
 
-        global list
+        # DB에 저장된 정보에 접근
         list = Hello.objects.all() # Hello의 모든 데이터를 긁어옴
 
         return HttpResponseRedirect(reverse('accountapp:hello')) # account/hello로 리다이렉트
     else:
+        list = Hello.objects.all()
         return render(req, "accountapp/hello.html", context={"list": list}) 
 
 class AccountCreateView(CreateView):
