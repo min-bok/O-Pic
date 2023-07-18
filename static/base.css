@@ -1,3 +1,20 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: local('Pretendard-Regular'), url("{% static 'fonts/Pretendard-Regular.woff2' %}") format("opentype");
+}
+@font-face {
+  font-family: 'Pretendard-Medium';
+  src: local('Pretendard-Medium'), url("{% static 'fonts/Pretendard-Medium.woff2' %}") format("opentype");
+}
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: local('Pretendard-Bold'), url("{% static 'fonts/Pretendard-Bold.woff2' %}") format("opentype");
+}
+
+body {
+    font-family: 'Pretendard-Regular';
+}
+
 /* common */
 .logo {
     font-family: 'Playfair Display', serif;
@@ -21,4 +38,5 @@
 
 .footer_logo {
     margin-top: 1rem; 
+    font-size: 0.9rem
 }
