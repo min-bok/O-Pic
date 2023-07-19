@@ -1,0 +1,29 @@
+body {
+    font-family: 'Pretendard-Regular';
+}
+
+/* common */
+.logo {
+    font-family: 'Playfair Display', serif;
+}
+
+/* header */
+.header_wrap {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/* footer */
+.footer_wrap {
+    text-align: center; 
+    margin-top: 2rem
+}
+
+.footer_list {
+    font-size: 0.6rem
+}
+
+.footer_logo {
+    margin-top: 1rem; 
+    font-size: 0.9rem
+}
