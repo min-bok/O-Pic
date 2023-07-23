@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from accountapp.forms import AccountUpdateForm
 from accountapp.models import Hello
-from django.views.generic import CreateView, DetailView, UpdateView
+from django.views.generic import CreateView, DetailView, UpdateView, DeleteView
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
@@ -29,7 +29,7 @@ def hello_world(req):
 class AccountCreateView(CreateView):
     model = User 
     form_class = UserCreationForm
-    success_url = reverse_lazy('accountapp:hello')
+    success_url = reverse_lazy('accountapp:login')
     template_name = 'accountapp/create.html'
 
 # 마이페이지
@@ -44,3 +44,9 @@ class AccountUpdateView(UpdateView):
     form_class = AccountUpdateForm
     success_url = reverse_lazy('accountapp:hello')
     template_name = 'accountapp/update.html'
+
+# 회원탈퇴
+class AccountDeleteView(DeleteView):
+    model = User
+    success_url = reverse_lazy('accountapp:login')
+    template_name = "accountapp/delete.html"
